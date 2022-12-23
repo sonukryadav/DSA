@@ -1,6 +1,5 @@
 class BasicsOperationOnArray{
 
-
 // 1. Linear Search Algorithm
     public static int linearSearch(int[] array, int element){
         int i = 0;
@@ -34,24 +33,20 @@ class BasicsOperationOnArray{
 
 
 
-public static void main(String[] args) {
-    System.out.println("Hi buddy!!");
-
-
-        // 1. Linear Search Algorithm
-        int[] array1 ={4,8,5,4,8,0,2,3,9,-4,-7,20};
-        System.out.println(linearSearch(array1,20));
-        //O/p: 11
-
-        System.out.println(linearSearch(array1,1));
-        //O/p: -1
-
-
-        // 2. Sort an Array
-        int[] array2 ={4,8,5,4,8,0, 1, 2,3,120120,9,-4,-7, -101010,20};
-        System.out.println(Arrays.toString(sortArray(array2)));
-        //O/p: [-101010, -7, -4, 0, 1, 2, 3, 4, 4, 5, 8, 8, 9, 20, 120120]
-
-
+    public static void main(String[] args) {
+        System.out.println("Hi buddy!!");
+        
+            // 1. Linear Search Algorithm
+            int[] array1 ={4,8,5,4,8,0,2,3,9,-4,-7,20};
+            System.out.println(linearSearch(array1,20));
+            //O/p: 11
+        
+            System.out.println(linearSearch(array1,1));
+            //O/p: -1
+        
+            // 2. Sort an Array
+            int[] array2 ={4,8,5,4,8,0, 1, 2,3,120120,9,-4,-7, -101010,20};
+            System.out.println(Arrays.toString(sortArray(array2)));
+            //O/p: [-101010, -7, -4, 0, 1, 2, 3, 4, 4, 5, 8, 8, 9, 20, 120120]
     }
 }
