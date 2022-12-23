@@ -1,6 +1,14 @@
-class BasicsOperationOnArray{
+import java.util.*;
+class BasicsOperationOnArray {
 
-// 1. Linear Search Algorithm
+    //Gemeral methods
+    public static void swapArray(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    // 1. Linear Search Algorithm
     public static int linearSearch(int[] array, int element){
         int i = 0;
         int length = array.length;
@@ -108,12 +116,12 @@ class BasicsOperationOnArray{
 
             // Insert:
             int[] array4 = new int[20];
-            arr12[0] = 12;
-            arr12[1] = 16;
-            arr12[2] = 20;
-            arr12[3] = 40;
-            arr12[4] = 50;
-            arr12[5] = 70;
+            array4[0] = 12;
+            array4[1] = 16;
+            array4[2] = 20;
+            array4[3] = 40;
+            array4[4] = 50;
+            array4[5] = 70;
             int indexFilled = 6;
             System.out.println(Arrays.toString(insertInArray(array4,26,indexFilled)));
             //O/p: [12, 16, 20, 26, 40, 50, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
