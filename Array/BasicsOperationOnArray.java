@@ -51,6 +51,34 @@ class BasicsOperationOnArray{
     // Time complexity : O(log(n))
     // Space complexity : O(1) (if recursive O(log(n)))
 
+    // Insert:
+    public static int[] insertInArray(int[] sortedArray, int element, int filledIndex){
+        int capacityOfArray = sortedArray.length;
+        if (filledIndex>=capacityOfArray){
+            return sortedArray;
+        }
+        int index = -1;
+        for(int i=filledIndex-1;i>=0;i--){
+            if(sortedArray[i]<element){
+                index = i;
+                break;
+            }
+        }
+        for(int i=filledIndex+1;i>index;i--){
+            if(i==index+1){
+                int temp = sortedArray[i];
+                sortedArray[i] = element;
+                sortedArray[i + 1] = temp;
+            }
+            else {
+                sortedArray[i + 1] = sortedArray[i];
+            }
+        }
+        return sortedArray;
+    }
+    // Time complexity : O(N)
+    // Space complexity : O(O)
+
 
 
 
@@ -77,5 +105,17 @@ class BasicsOperationOnArray{
             int[] array3 ={-4,-1,0,2,4,5,6,7,9};
             System.out.println(binarySearchIterative(array3,0,array3.length-1,5));
             //O/p: 5
+
+            // Insert:
+            int[] array4 = new int[20];
+            arr12[0] = 12;
+            arr12[1] = 16;
+            arr12[2] = 20;
+            arr12[3] = 40;
+            arr12[4] = 50;
+            arr12[5] = 70;
+            int indexFilled = 6;
+            System.out.println(Arrays.toString(insertInArray(array4,26,indexFilled)));
+            //O/p: [12, 16, 20, 26, 40, 50, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
 }
