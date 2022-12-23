@@ -30,6 +30,27 @@ class BasicsOperationOnArray{
     // Time complexity : O(N²)
     // Space complexity : O(1)
 
+    // 3. Search, insert and delete in a sorted array
+    //search in sorted array :
+    public static int binarySearchIterative(int[] array, int startIndex, int endIndex, int givenElement){
+        while(startIndex <= endIndex){
+            int midIndex = startIndex + (endIndex-startIndex)/2;
+            if(array[midIndex] == givenElement){
+                return midIndex;
+            }
+            else if(array[midIndex] > givenElement){
+                endIndex = midIndex -1;
+            }
+            else if(array[midIndex] < givenElement){
+                startIndex = midIndex + 1;
+            }
+
+        }
+        return -1;
+    }
+    // Time complexity : O(log(n))
+    // Space complexity : O(1) (if recursive O(log(n)))
+
 
 
 
@@ -44,9 +65,17 @@ class BasicsOperationOnArray{
             System.out.println(linearSearch(array1,1));
             //O/p: -1
         
+
             // 2. Sort an Array
             int[] array2 ={4,8,5,4,8,0, 1, 2,3,120120,9,-4,-7, -101010,20};
             System.out.println(Arrays.toString(sortArray(array2)));
             //O/p: [-101010, -7, -4, 0, 1, 2, 3, 4, 4, 5, 8, 8, 9, 20, 120120]
+
+
+            // 3. Search, insert and delete in a sorted array
+            // Search:
+            int[] array3 ={-4,-1,0,2,4,5,6,7,9};
+            System.out.println(binarySearchIterative(array3,0,array3.length-1,5));
+            //O/p: 5
     }
 }
