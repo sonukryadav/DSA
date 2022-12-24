@@ -87,43 +87,73 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Space complexity : O(O)
 
+    // delete in a sorted array
+    public static int deleteInSortedArray(int[] array, int element) {
+        int size = array.length;
+        int elementIndex = binarySearchIterative(array, 0, array.length - 1, element);
+
+        if (elementIndex == -1) {
+            System.out.println("Element not found");
+            return size;
+        }
+        for (int i = elementIndex; i < size - 1; i++)
+            array[i] = array[i + 1];
+        return size - 1;
+    }
+    // Time complexity : O(N)
+    // Space complexity : O(log(N)
 
 
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
-        
-            // 1. Linear Search Algorithm
-            int[] array1 ={4,8,5,4,8,0,2,3,9,-4,-7,20};
-            System.out.println(linearSearch(array1,20));
-            //O/p: 11
-        
-            System.out.println(linearSearch(array1,1));
-            //O/p: -1
-        
 
-            // 2. Sort an Array
-            int[] array2 ={4,8,5,4,8,0, 1, 2,3,120120,9,-4,-7, -101010,20};
-            System.out.println(Arrays.toString(sortArray(array2)));
-            //O/p: [-101010, -7, -4, 0, 1, 2, 3, 4, 4, 5, 8, 8, 9, 20, 120120]
+        // 1. Linear Search Algorithm
+        int[] array1 ={4,8,5,4,8,0,2,3,9,-4,-7,20};
+        System.out.println(linearSearch(array1,20));
+        //O/p: 11
+
+        System.out.println(linearSearch(array1,1));
+        //O/p: -1
 
 
-            // 3. Search, insert and delete in a sorted array
-            // Search:
-            int[] array3 ={-4,-1,0,2,4,5,6,7,9};
-            System.out.println(binarySearchIterative(array3,0,array3.length-1,5));
-            //O/p: 5
+        // 2. Sort an Array
+        int[] array2 ={4,8,5,4,8,0, 1, 2,3,120120,9,-4,-7, -101010,20};
+        System.out.println(Arrays.toString(sortArray(array2)));
+        //O/p: [-101010, -7, -4, 0, 1, 2, 3, 4, 4, 5, 8, 8, 9, 20, 120120]
 
-            // Insert:
-            int[] array4 = new int[20];
-            array4[0] = 12;
-            array4[1] = 16;
-            array4[2] = 20;
-            array4[3] = 40;
-            array4[4] = 50;
-            array4[5] = 70;
-            int indexFilled = 6;
-            System.out.println(Arrays.toString(insertInArray(array4,26,indexFilled)));
-            //O/p: [12, 16, 20, 26, 40, 50, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        //  3. Search, insert and delete in a sorted array
+        //  Search:
+        int[] array3 ={-4,-1,0,2,4,5,6,7,9};
+        System.out.println(binarySearchIterative(array3,0,array3.length-1,5));
+        //O/p: 5
+
+        // Insert:
+        int[] array4 = new int[20];
+        array4[0] = 12;
+        array4[1] = 16;
+        array4[2] = 20;
+        array4[3] = 40;
+        array4[4] = 50;
+        array4[5] = 70;
+        int indexFilled = 6;
+        System.out.println(Arrays.toString(insertInArray(array4,26,indexFilled)));
+        //O/p: [12, 16, 20, 26, 40, 50, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+        // Delete
+        int[] array13 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        int size = array13.length;
+        System.out.println("Array before delete : " + Arrays.toString(array13));
+        // O/p: Array before delete : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        size = deleteInSortedArray(array13, 5);
+        System.out.println("Array after delete : ");
+        for (int i = 0; i < size; i++) {
+            System.out.print(array13[i] + " ");
+        }
+        System.out.println();
+        // O/p: Array after delete :
+        // 1 2 3 4 6 7 8 9 10
     }
 }
