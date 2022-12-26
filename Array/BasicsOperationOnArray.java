@@ -360,7 +360,7 @@ class BasicsOperationOnArray {
         } else {
             System.out.println("Element is not found.");
         }
-        // o/p: Index is 6
+        // O/p: Index is 6
 
     }
 }
