@@ -177,6 +177,46 @@ class BasicsOperationOnArray {
     // Space complexity : O(1)
 
 
+    // 4. Rotate array left by d position.
+    static int[] rotateLeft(int[] array, int rotateBy) { // and right
+        // To handle if, rotateBy >= length of array
+        int n = array.length; // n length of array
+        rotateBy = rotateBy % n; // effective rotation count
+        int gcd = gcd(rotateBy, n); // Calculate the GCD(rotateBy, n) -> to divide the array into sets.
+
+        // (--> This is to rotate to left) and to rotate to right--> for(int i = n-1; i
+        // >= gcd; i--){...
+        for (int i = 0; i < gcd; i++) {
+            /* move i-th values of blocks */
+            int j = i;
+            int temp = array[i];
+
+            while (true) {
+                int k = j + rotateBy;
+                if (k >= n)
+                    k = k - n;
+                if (k == i)
+                    break;
+                array[j] = array[k];
+                j = k;
+            }
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    // Greatest common divisor (gcd)
+    static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return gcd(b, a % b);
+        }
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(1)
+
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -258,6 +298,27 @@ class BasicsOperationOnArray {
         int[] array9 = { 1, 2, 0, 4, 3, 0, 5, 0 };
         System.out.println(Arrays.toString(allZerosToEnd(array9)));
         // O/p: [5, 4, 3, 2, 1, 0, 0, 0]
+
+        // 4. Rotate array left by d position
+        /*
+         * Given an array of integers arr[] of size N and an integer, the task
+         * is to rotate the array elements to the left by d positions.
+         * Input: arr[] = {1, 2, 3, 4, 5, 6, 7}, d = 2
+         * Output: 3 4 5 6 7 1 2
+         * Input: arr[] = {3, 4, 5, 6, 7, 1, 2}, d=2
+         * Output: 5 6 7 1 2 3 4
+         */
+        int[] array10 = { 1, 2, 3, 4, 5, 6, 7 };
+        System.out.println(Arrays.toString(rotateLeft(array10, 6)));
+        // O/p: [7, 1, 2, 3, 4, 5, 6]
+
+        int[] array11 = { 3, 4, 5, 6, 7, 1, 2 };
+        System.out.println(Arrays.toString(rotateLeft(array11, 2)));
+        // O/p: [5, 6, 7, 1, 2, 3, 4]
+
+        int[] array12 = { 5, 8, 7, 9, 1, 5, 4, 6 };
+        System.out.println(Arrays.toString(rotateLeft(array12, 3)));
+        // O/p: [9, 1, 5, 4, 6, 5, 8, 7]
 
     }
 }
