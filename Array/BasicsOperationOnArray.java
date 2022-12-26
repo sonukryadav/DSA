@@ -216,6 +216,32 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Auxiliary Space : O(1)
 
+    // 5. Search an element in sorted and rotated array.
+    public static int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1, mid;
+        while (left <= right) {
+            mid = (right - left) / 2 + left;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                if (nums[mid] > nums[right] && nums[left] > target) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            } else {
+                if (nums[mid] < nums[left] && nums[left] <= target) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+        }
+        return -1;
+    }
+    // Time complexity : O(log(N))
+    // Auxiliary Space : O(1)
+
 
 
     public static void main(String[] args) {
@@ -319,6 +345,22 @@ class BasicsOperationOnArray {
         int[] array12 = { 5, 8, 7, 9, 1, 5, 4, 6 };
         System.out.println(Arrays.toString(rotateLeft(array12, 3)));
         // O/p: [9, 1, 5, 4, 6, 5, 8, 7]
+
+
+        // 5. Search an element in sorted and rotated array.
+        /*
+         * Search an element in a sorted and rotated Array in O(logN) time complexity.
+         * Assume all elements are distinct.
+         */
+        int[] array13 = { 4, 5, 6, 7, 8, 9, 1, 2, 3 };
+        int vnum1 = search(array13, 1);
+
+        if (vnum1 != -1) {
+            System.out.println("Index is " + vnum1);
+        } else {
+            System.out.println("Element is not found.");
+        }
+        // o/p: Index is 6
 
     }
 }
