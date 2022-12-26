@@ -134,6 +134,35 @@ class BasicsOperationOnArray {
     // Time complexity : O(N/2)
     // Space complexity : O(1)
 
+    // 2. Rearrange an array such that arr[i] = i, if not present then -1.(only in
+    // aliter)
+    public static int[] rearrangement3(int[] array1) {
+        int length = array1.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (array1[j] == i) {
+                    swapArray(array1, i, j);
+                }
+            }
+        }
+        return array1;
+    }
+    // Time complexity : O(N²)
+    // Space complexity : O(1)
+
+    // Aliter:
+    public static int[] rearrangement4(int[] array1) {
+        int length = array1.length;
+        for (int i = 0; i < length; i++) {
+            if (array1[i] != i) {
+                array1[i] = -1;
+            }
+        }
+        return array1;
+    }
+    // Time complexity : O(N)
+    // Space complexity : O(1)
+
 
 
     public static void main(String[] args) {
@@ -199,6 +228,18 @@ class BasicsOperationOnArray {
         int[] array6 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         System.out.println(Arrays.toString(reverseArray1(array6)));
         // O/p: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+        // 2. Rearrange an array such that arr[i] = i, if not present then -1.
+        int[] array7 = { -1, -1, 6, 1, 9, 3, 2, -1, 4, -1 };
+        System.out.println(Arrays.toString(rearrangement3(array7)));
+        // O/p: [-1, 1, 2, 3, 4, -1, 6, -1, -1, 9]
+
+        int[] array8 = { -2, 8, 3, 4, 11, 0, 3, 1, 2, 5, 3, 12 };
+        System.out.println(Arrays.toString(rearrangement3(array8)));
+        // O/p: [0, 1, 2, 3, 4, 5, 12, 3, 8, -2, 3, 11]
+
+        System.out.println(Arrays.toString(rearrangement4(array8)));
+        // O/p: [0, 1, 2, 3, 4, 5, -1, -1, 8, -1, -1, 11]
 
     }
 }
