@@ -163,6 +163,19 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Space complexity : O(1)
 
+    // 3. Move all zeroes to end of array.
+    public static int[] allZerosToEnd(int[] array1) {
+        int length = array1.length;
+        int count = length - 1;
+        Arrays.sort(array1); // nlog(n)
+        for (int i = 0; i < length / 2; i++) { // n/2
+            swapArray(array1, i, length - 1 - i);
+        }
+        return array1;
+    }
+    // Time complexity : O(Nlog(N)
+    // Space complexity : O(1)
+
 
 
     public static void main(String[] args) {
@@ -240,6 +253,11 @@ class BasicsOperationOnArray {
 
         System.out.println(Arrays.toString(rearrangement4(array8)));
         // O/p: [0, 1, 2, 3, 4, 5, -1, -1, 8, -1, -1, 11]
+
+        // 3. Move all zeroes to end of array.
+        int[] array9 = { 1, 2, 0, 4, 3, 0, 5, 0 };
+        System.out.println(Arrays.toString(allZerosToEnd(array9)));
+        // O/p: [5, 4, 3, 2, 1, 0, 0, 0]
 
     }
 }
