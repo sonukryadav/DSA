@@ -1160,9 +1160,9 @@ public static void main(String[] args) {
     //O/p:
     /*
     Traversal in forward Direction
-     1 7 5 8 6 4
+    1 7 5 8 6 4
     Traversal in reverse direction
-     4 6 8 5 7 1
+    4 6 8 5 7 1
     */
 
 
