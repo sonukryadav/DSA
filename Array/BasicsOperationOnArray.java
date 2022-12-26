@@ -109,6 +109,32 @@ class BasicsOperationOnArray {
     // Space complexity : O(log(N)
 
 
+    // ---------------------------Array Questions------------------------//
+
+    // 1. Program to reverse an array.
+    public static int[] reverseArray1(int[] array1) {
+        int length = array1.length;
+        int[] array2 = new int[length];
+        for (int i = 0; i < length; i++) {
+            array2[i] = array1[length - i - 1];
+        }
+        return array2;
+    }
+    // Time complexity : O(N)
+    // Space complexity : O(N)
+
+    // Aliter:
+    public static int[] reverseArray2(int[] array1) {
+        int length = array1.length;
+        for (int i = 0; i < length / 2; i++) {
+            swapArray(array1, i, length - i - 1);
+        }
+        return array1;
+    }
+    // Time complexity : O(N/2)
+    // Space complexity : O(1)
+
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -165,6 +191,14 @@ class BasicsOperationOnArray {
         System.out.println();
         // O/p: Array after delete :
         // 1 2 3 4 6 7 8 9 10
+
+        // --------------------------Array
+        // Question---------------------------------------//
+
+        // 1. Program to reverse an array.
+        int[] array6 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        System.out.println(Arrays.toString(reverseArray1(array6)));
+        // O/p: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
     }
 }
