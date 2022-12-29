@@ -581,6 +581,5 @@ class BasicsOperationOnArray {
         int[] arrat13E7 = { 12, 35, 1, 10, 34, 1 };
         secondLargest(arrat13E7);
         // O/p: 34
-
     }
 }
