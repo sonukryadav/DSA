@@ -292,6 +292,22 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Auxiliary Space : O(N)
 
+    // 5. Segregate even and odd numbers.
+    public static int[] seregateEvenOdd(int[] array) {
+        int length = array.length;
+        int i = 0, j = 0;
+        while (i < length) {
+            if (array[i] % 2 == 0) {
+                swapArray(array, i, j);
+                j++;
+            }
+            i++;
+        }
+        return array;
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(1)
+
 
 
     public static void main(String[] args) {
@@ -437,6 +453,16 @@ class BasicsOperationOnArray {
         System.out.println(Arrays.toString(maxMinFormTwoPointer(array13E2)));
         // O/p: [10, -2, 9, -1, 8, 0, 7, 1, 6, 2, 5, 3, 4]
 
+
+        // 5. Segregate even and odd numbers.
+        /*
+         * Given an array arr[] of integers, segregate even and odd numbers
+         * in the array. Such that all the even numbers should be present first,
+         * and then the odd numbers.
+         */
+        int[] array13E3 = { 1, 3, 2, 4, 7, 6, 9, 10 };
+        System.out.println(Arrays.toString(seregateEvenOdd(array13E3)));
+        // O/p: [2, 4, 6, 10, 7, 1, 9, 3]
         
 
     }
