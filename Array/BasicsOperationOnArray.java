@@ -243,6 +243,14 @@ class BasicsOperationOnArray {
     // Auxiliary Space : O(1)
 
 
+    //--------------------------------Easy----------------------------------------//
+    // 1.Rearrange an array such that arr[i] = i
+    // ==> Done above!!!
+
+    // 2. Move all zeroes to end of array
+    // ==> Done above!!!
+
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -361,6 +369,15 @@ class BasicsOperationOnArray {
             System.out.println("Element is not found.");
         }
         // O/p: Index is 6
+
+
+
+        //----------------------------------------EASY---------------------------------//
+        // 1.Rearrange an array such that arr[i] = i
+        // ==> Done above!!!
+
+        // 2. Move all zeroes to end of array
+        // ==> Done above!!!
 
     }
 }
