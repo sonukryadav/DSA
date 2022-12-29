@@ -340,6 +340,31 @@ class BasicsOperationOnArray {
         System.out.println(array[index - 1]);
     }
 
+    // 9. Find the largest three distinct elements in an array
+    public static void largestThreeDistinctElements(int[] array) {
+        int length = array.length;
+        Arrays.sort(array);
+        if (length > 3) {
+            int i = 0;
+            while (i < 3) {
+                System.out.print(array[length - 1 - i] + " ");
+                i++;
+            }
+            System.out.println();
+        } else {
+            System.out.println("It has less than 3 elements.");
+        }
+    }
+    // Time complexity : O(Nlog(N))
+    // Auxiliary Space : O(1)
+
+    // 10. Find Second largest element in an array
+    public static void secondLargest(int[] array) {
+        int length = array.length;
+        Arrays.sort(array);
+        System.out.println(array[length - 2]);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -541,6 +566,21 @@ class BasicsOperationOnArray {
         int[] array13E5 = { 12, 3, 5, 7, 19 };
         smallOrLargeInUnsorted(array13E5, 2);
         // O/p: 5
+
+        // 9. Find the largest three distinct elements in an array
+        /*
+         * Given an array with all distinct elements, find the largest
+         * three elements. Expected time complexity is O(n) and extra space
+         * is O(1).
+         */
+        int[] array13E6 = { 10, 4, 3, 50, 23, 90 };
+        largestThreeDistinctElements(array13E6);
+        // O/p: 90 50 23
+
+        // 10. Find Second largest element in an array
+        int[] arrat13E7 = { 12, 35, 1, 10, 34, 1 };
+        secondLargest(arrat13E7);
+        // O/p: 34
 
     }
 }
