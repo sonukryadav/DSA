@@ -250,6 +250,26 @@ class BasicsOperationOnArray {
     // 2. Move all zeroes to end of array
     // ==> Done above!!!
 
+    // 3. Rearrange array such that even positioned are greater than odd
+    public static int[] evenPosGreaterThenOdd(int[] array) {
+        int length = array.length;
+        Arrays.sort(array);
+        for (int i = 1; i < length - 1; i++) {
+            if (i % 2 == 0) {
+                if (array[i] > array[i - 1]) {
+                    swapArray(array, i, i - 1);
+                }
+            } else {
+                if (array[i] < array[i - 1]) {
+                    swapArray(array, i, i - 1);
+                }
+            }
+        }
+        return array;
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(1)
+
 
 
     public static void main(String[] args) {
@@ -378,6 +398,11 @@ class BasicsOperationOnArray {
 
         // 2. Move all zeroes to end of array
         // ==> Done above!!!
+
+        // 3. Rearrange array such that even positioned are greater than odd
+        int[] array13E1 = { 1, 3, 2, 5, 4, -7, 0, 4 };
+        System.out.println(Arrays.toString(evenPosGreaterThenOdd(array13E1)));
+        // O/p: [-7, 1, 0, 3, 2, 4, 4, 5]
 
     }
 }
