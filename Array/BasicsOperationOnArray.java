@@ -270,6 +270,28 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Auxiliary Space : O(1)
 
+    // 4. Rearrange an array in maximum minimum form using Two Pointer Technique.
+    public static int[] maxMinFormTwoPointer(int[] array) {
+        int length = array.length;
+        int[] array2 = new int[length];
+        int j = 0, k = length - 1;
+        boolean bool = true;
+        for (int i = 0; i < length; i++) {
+            if (bool) {
+                array2[i] = array[k];
+                bool = false;
+                k--;
+            } else {
+                array2[i] = array[j];
+                bool = true;
+                j++;
+            }
+        }
+        return array2;
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(N)
+
 
 
     public static void main(String[] args) {
@@ -403,6 +425,19 @@ class BasicsOperationOnArray {
         int[] array13E1 = { 1, 3, 2, 5, 4, -7, 0, 4 };
         System.out.println(Arrays.toString(evenPosGreaterThenOdd(array13E1)));
         // O/p: [-7, 1, 0, 3, 2, 4, 4, 5]
+
+        // 4. Rearrange an array in maximum minimum form using Two Pointer Technique.
+        /*
+         * Given a sorted array of positive integers, rearrange the array alternately
+         * i.e first element should be a maximum value, at second position minimum
+         * value,
+         * at third position second max, at fourth position second min, and so on.
+         */
+        int[] array13E2 = { -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        System.out.println(Arrays.toString(maxMinFormTwoPointer(array13E2)));
+        // O/p: [10, -2, 9, -1, 8, 0, 7, 1, 6, 2, 5, 3, 4]
+
+        
 
     }
 }
