@@ -309,6 +309,30 @@ class BasicsOperationOnArray {
     // Auxiliary Space : O(1)
 
 
+    // 6. Reversal algorithm for Array rotation
+    // O/p: Done above!!!
+
+    // 7. Print left rotation of array in O(n) time and O(1) space
+    static void leftRotate(int array[], int k) {
+        int length = array.length;
+        // To get the starting point of rotated array
+        int mod = k % length;
+        // Prints the rotated array from start position
+        for (int i = 0; i < length; ++i) {
+            System.out.print(array[(i + mod) % length] + " ");
+        }
+        System.out.println();
+
+        /*
+         * Aliter:
+         * Collections.rotate(Arrays.asList(arr), length - k);
+         * for(int i = 0; i < n; i++)
+         * System.out.print(arr[i] + " ");
+         */
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(1)
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -463,6 +487,42 @@ class BasicsOperationOnArray {
         int[] array13E3 = { 1, 3, 2, 4, 7, 6, 9, 10 };
         System.out.println(Arrays.toString(seregateEvenOdd(array13E3)));
         // O/p: [2, 4, 6, 10, 7, 1, 9, 3]
+
+        // 6. Reversal algorithm for Array rotation
+        /*
+         * Given an array arr[] of size N, the task
+         * is to rotate the array by d position to the left.
+         */
+        // O/p: Done above!!!
+
+        // 7. Print left rotation of array in O(n) time and O(1) space
+        /*
+         * Given an array of size n and multiple values around which we
+         * need to left rotate the array.
+         * Input :
+         * int arr[] = {1, 3, 5, 7, 9}
+         * k1 = 1
+         * k2 = 3
+         * k3 = 4
+         * k4 = 6
+         * Output :
+         * 3 5 7 9 1
+         * 7 9 1 3 5
+         * 9 1 3 5 7
+         * 3 5 7 9 1
+         */
+        int[] array13E4 = { 1, 3, 5, 7, 9 };
+        leftRotate(array13E4, 1);
+        leftRotate(array13E4, 3);
+        leftRotate(array13E4, 4);
+        leftRotate(array13E4, 6);
+        // O/p:
+        /*
+         * [3, 5, 7, 9, 1]
+         * [9, 1, 3, 5, 7]
+         * [7, 9, 1, 3, 5]
+         * [9, 1, 3, 5, 7]
+         */
         
 
     }
