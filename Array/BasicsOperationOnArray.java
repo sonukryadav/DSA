@@ -333,6 +333,13 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Auxiliary Space : O(1)
 
+    // 8. K’th Smallest/Largest Element in Unsorted Array
+    public static void smallOrLargeInUnsorted(int[] array, int index) {
+        int length = array.length;
+        Arrays.sort(array);
+        System.out.println(array[index - 1]);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -523,7 +530,17 @@ class BasicsOperationOnArray {
          * [7, 9, 1, 3, 5]
          * [9, 1, 3, 5, 7]
          */
-        
+
+
+        // 8. K’th Smallest/Largest Element in Unsorted Array
+        /*
+         * Given an array and a number K where K is smaller than
+         * the size of the array. Find the K’th smallest element in
+         * the given array. Given that all array elements are distinct.
+         */
+        int[] array13E5 = { 12, 3, 5, 7, 19 };
+        smallOrLargeInUnsorted(array13E5, 2);
+        // O/p: 5
 
     }
 }
