@@ -366,6 +366,20 @@ class BasicsOperationOnArray {
     }
 
 
+    // 11. Sort an array in wave form
+    public static int[] sortArrayWave(int[] array){
+        int length = array.length;
+        Arrays.sort(array);
+        for (int i=0;i<length-1;){
+                swapArray(array,i,i+1);
+                i+=2;
+        }
+        return array;
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(1)
+
+
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
 
@@ -581,5 +595,13 @@ class BasicsOperationOnArray {
         int[] arrat13E7 = { 12, 35, 1, 10, 34, 1 };
         secondLargest(arrat13E7);
         // O/p: 34
+
+        // 11. Sort an array in wave form
+        /* Given an unsorted array of integers, sort the array into a wave
+        array. An array arr[0..n-1] is sorted in wave form if:
+        arr[0] >= arr[1] <= arr[2] >= arr[3] <= arr[4] >= …..*/
+        int[] array13E8 = {10, 90, 49, 2, 1, 5, 23};
+        System.out.println(Arrays.toString(sortArrayWave(array13E8)));
+        //O/p: [2, 1, 10, 5, 49, 23, 90]
     }
 }
