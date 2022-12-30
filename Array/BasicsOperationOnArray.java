@@ -367,12 +367,12 @@ class BasicsOperationOnArray {
 
 
     // 11. Sort an array in wave form
-    public static int[] sortArrayWave(int[] array){
+    public static int[] sortArrayWave(int[] array) {
         int length = array.length;
         Arrays.sort(array);
-        for (int i=0;i<length-1;){
-                swapArray(array,i,i+1);
-                i+=2;
+        for (int i = 0; i < length - 1;) {
+            swapArray(array, i, i + 1);
+            i += 2;
         }
         return array;
     }
