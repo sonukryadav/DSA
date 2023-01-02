@@ -379,6 +379,30 @@ class BasicsOperationOnArray {
     // Time complexity : O(N)
     // Auxiliary Space : O(1)
 
+    // 12. Sort an array which contain 1 to n values
+    // 👍👍 Applied Arrays.sort(array);
+    // Time complexity : O(N log(N))
+    // Auxiliary Space : O(1)
+
+    // 13. Count the number of possible triangles
+    public static int numberOfTriangles(int[] array) {
+        int length = array.length;
+        Arrays.sort(array);
+        int count = 0;
+        for (int i = length - 1; i >= 1; i--) {
+            int j = 0, k = i - 1;
+            while (j < k) {
+                if (array[j] + array[k] >= array[i]) {
+                    count += k - j;
+                    k--;
+                } else {
+                    j++;
+                }
+            }
+        }
+        return count;
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
@@ -603,5 +627,29 @@ class BasicsOperationOnArray {
         int[] array13E8 = {10, 90, 49, 2, 1, 5, 23};
         System.out.println(Arrays.toString(sortArrayWave(array13E8)));
         //O/p: [2, 1, 10, 5, 49, 23, 90]
+
+        // 12. Sort an array which contain 1 to n values
+        /*
+         * You have given an array which contain 1 to n element, your
+         * task is to sort this array in an efficient way and without replace
+         * with 1 to n numbers.
+         */
+        int[] array13E9 = { 3, 2, 5, 6, 1, 4 };
+        Arrays.sort(array13E9);
+        System.out.println(Arrays.toString(array13E9));
+        // O/p: [1, 2, 3, 4, 5, 6]
+
+        // 13. Count the number of possible triangles
+        /*
+         * Given an unsorted array of positive integers, find the number of
+         * triangles that can be formed with three different array elements as
+         * three sides of triangles. For a triangle to be possible from 3 values,
+         * the sum of any of the two values (or sides) must be greater than the
+         * third value (or third side).
+         */
+        int[] array13E10 = { 10, 21, 22, 100, 101, 200, 300 };
+        System.out.println(numberOfTriangles(array13E10));
+        // O/p: 7
+
     }
 }
