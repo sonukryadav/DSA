@@ -402,6 +402,22 @@ class BasicsOperationOnArray {
         }
         return count;
     }
+    // Time complexity :
+    // Auxiliary Space :
+
+    // 14. Print All Distinct Elements of a given integer array
+    public static void printAllDistinctElements(int[] array) {
+        int length = array.length;
+        HashSet<Integer> hashset = new HashSet<>();
+        for (int i = 0; i < length; i++) {
+            if (!hashset.contains(array[i])) {
+                hashset.add(array[i]);
+            }
+        }
+        System.out.println(Arrays.toString(hashset.toArray()));
+    }
+    // Time complexity : O(N)
+    // Auxiliary Space : O(N)
 
 
     public static void main(String[] args) {
@@ -605,6 +621,7 @@ class BasicsOperationOnArray {
         smallOrLargeInUnsorted(array13E5, 2);
         // O/p: 5
 
+
         // 9. Find the largest three distinct elements in an array
         /*
          * Given an array with all distinct elements, find the largest
@@ -615,10 +632,12 @@ class BasicsOperationOnArray {
         largestThreeDistinctElements(array13E6);
         // O/p: 90 50 23
 
+
         // 10. Find Second largest element in an array
         int[] arrat13E7 = { 12, 35, 1, 10, 34, 1 };
         secondLargest(arrat13E7);
         // O/p: 34
+
 
         // 11. Sort an array in wave form
         /* Given an unsorted array of integers, sort the array into a wave
@@ -627,6 +646,7 @@ class BasicsOperationOnArray {
         int[] array13E8 = {10, 90, 49, 2, 1, 5, 23};
         System.out.println(Arrays.toString(sortArrayWave(array13E8)));
         //O/p: [2, 1, 10, 5, 49, 23, 90]
+
 
         // 12. Sort an array which contain 1 to n values
         /*
@@ -639,6 +659,7 @@ class BasicsOperationOnArray {
         System.out.println(Arrays.toString(array13E9));
         // O/p: [1, 2, 3, 4, 5, 6]
 
+
         // 13. Count the number of possible triangles
         /*
          * Given an unsorted array of positive integers, find the number of
@@ -650,6 +671,12 @@ class BasicsOperationOnArray {
         int[] array13E10 = { 10, 21, 22, 100, 101, 200, 300 };
         System.out.println(numberOfTriangles(array13E10));
         // O/p: 7
+
+
+        // 14. Print All Distinct Elements of a given integer array
+        int[] array13E11 = { 6, 10, 5, 4, 9, 120, 4, 6, 10 };
+        printAllDistinctElements(array13E11);
+        // O/p: [4, 5, 6, 120, 9, 10]
 
     }
 }
