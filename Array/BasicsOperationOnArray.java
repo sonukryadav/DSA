@@ -433,6 +433,14 @@ class BasicsOperationOnArray {
     // Auxiliary Space: O(1)
 
 
+    // 16. Find sub-array with given sum
+    // Time Complexity: O()
+    // Auxiliary Space: O()
+
+
+    // -----------------------------Must Questions Methods------------------------------//
+
+
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
 
@@ -701,6 +709,13 @@ class BasicsOperationOnArray {
         int[] array13E12 = { 2, 3, 5, 4, 5, 3, 4 };
         System.out.println(numberThatOccurOnces(array13E12));
         // O/p: 2
+
+
+        // 16. Find sub-array with given sum
+
+
+        //-----------------------------Must Questions-------------------------------//
+
 
     }
 }
