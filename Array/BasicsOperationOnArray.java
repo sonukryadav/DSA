@@ -420,6 +420,19 @@ class BasicsOperationOnArray {
     // Auxiliary Space : O(N)
 
 
+    // 15.Find the element that appears once
+    public static int numberThatOccurOnces(int[] array) {
+        int length = array.length;
+        int ele = array[0];
+        for (int i = 1; i < length; i++) {
+            ele = ele ^ array[i];
+        }
+        return ele;
+    }
+    // Time Complexity: O(n)
+    // Auxiliary Space: O(1)
+
+
     public static void main(String[] args) {
         System.out.println("Hi buddy!!");
 
@@ -677,6 +690,17 @@ class BasicsOperationOnArray {
         int[] array13E11 = { 6, 10, 5, 4, 9, 120, 4, 6, 10 };
         printAllDistinctElements(array13E11);
         // O/p: [4, 5, 6, 120, 9, 10]
+
+
+        // 15.Find the element that appears once
+        /*
+         * Given an array of integers. All numbers occur twice
+         * except one number which occurs once. Find the number in O(n)
+         * time & constant extra space.
+         */
+        int[] array13E12 = { 2, 3, 5, 4, 5, 3, 4 };
+        System.out.println(numberThatOccurOnces(array13E12));
+        // O/p: 2
 
     }
 }
