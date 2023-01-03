@@ -455,6 +455,35 @@ class BasicsOperationOnArray {
     // Auxiliary Space : O(1)
 
 
+    // M-3. Generate all subsequence.
+    public static void allSubsequence(int[] array, int index, ArrayList<Integer> arraylist) {
+        if (array.length == index) {
+            if (arraylist.size() > 0) {
+                for (int i = 0; i < arraylist.size(); i++) {
+                    System.out.print(arraylist.get(i) + " ");
+                }
+                System.out.println();
+            } else {
+                System.out.println("[]");
+            }
+
+        } else {
+            // adding the current index into the subsequence and calling the recursive
+            // function.
+            allSubsequence(array, index + 1, arraylist);
+            arraylist.add(array[index]);
+
+            // not adding the current element into the subsequence.
+            allSubsequence(array, index + 1, arraylist);
+
+            // removing the added index into the subsequence.
+            arraylist.remove(arraylist.size() - 1);
+        }
+    }
+    // Time complexity : O(2^N)
+    // Auxiliary Space : O(N)
+
+
 
 
 
@@ -735,7 +764,7 @@ class BasicsOperationOnArray {
         //-----------------------------Must Questions-------------------------------//
 
 
- // M-2. Generate all subArrays.
+        // M-2. Generate all subArrays.
         int[] arrayM1 = {1,2,3,4};
         System.out.println("-----subArrays-----");
         allSubarrays(arrayM1);
@@ -754,5 +783,20 @@ class BasicsOperationOnArray {
         4
         */
 
+        // M-3. Generate all subsequence.
+        int[] arrayM2 = { 1, 2, 3, 4 };
+        ArrayList<Integer> arrayListM2 = new ArrayList<>();
+        System.out.println("-----subsequence-----");
+        allSubsequence(arrayM2, 0, arrayListM2);
+        System.out.println("-----subsequence-----");
+
+
+
+
+
+
+
     }
 }
+
+
