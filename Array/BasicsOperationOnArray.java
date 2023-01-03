@@ -439,6 +439,24 @@ class BasicsOperationOnArray {
 
 
     // -----------------------------Must Questions Methods------------------------------//
+    // M-2. Generate all subArrays.
+    public static void allSubarrays(int[] array) {
+        int length = array.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = i; j < length; j++) {
+                for (int k = i; k <= j; k++) {
+                    System.out.print(array[k] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+    // Time complexity : O(N^2)
+    // Auxiliary Space : O(1)
+
+
+
+
 
 
     public static void main(String[] args) {
@@ -716,6 +734,25 @@ class BasicsOperationOnArray {
 
         //-----------------------------Must Questions-------------------------------//
 
+
+ // M-2. Generate all subArrays.
+        int[] arrayM1 = {1,2,3,4};
+        System.out.println("-----subArrays-----");
+        allSubarrays(arrayM1);
+        System.out.println("-----subArrays-----");
+        //O/p:
+        /*
+        1
+        1 2
+        1 2 3
+        1 2 3 4
+        2
+        2 3
+        2 3 4
+        3
+        3 4
+        4
+        */
 
     }
 }
