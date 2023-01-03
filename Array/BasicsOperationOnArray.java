@@ -484,6 +484,26 @@ class BasicsOperationOnArray {
     // Auxiliary Space : O(N)
 
 
+    // M-4. Generate all subsets.
+    public static void allSubset(int[] array, int length) {
+        // calculating the power set for the array.
+        long powerSet = (long) Math.pow(2, length);
+
+        // Running a counter loop form 0 to powerSet.
+        for (int counter = 0; counter < powerSet; counter++) {
+            for (int i = 0; i < length; i++) {
+                // if the i-th bit is set then print the i-th element
+                if ((counter & (1 << i)) > 0) {
+                    System.out.print(array[i] + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    // Time complexity : O(N^2)
+    // Auxiliary Space : O(1)
+
+
 
 
 
@@ -789,6 +809,32 @@ class BasicsOperationOnArray {
         System.out.println("-----subsequence-----");
         allSubsequence(arrayM2, 0, arrayListM2);
         System.out.println("-----subsequence-----");
+
+
+        // M-4.Generate all subsets.
+        int[] arrayM3 = { 1, 2, 3, 4 };
+        System.out.println("-----subsets-----");
+        allSubset(arrayM3, arrayM3.length);
+        // O/p:
+        /*
+
+        1
+        2
+        1 2
+        3
+        1 3
+        2 3
+        1 2 3
+        4
+        1 4
+        2 4
+        1 2 4
+        3 4
+        1 3 4
+        2 3 4
+        1 2 3 4
+         */
+        System.out.println("-----subsets-----");
 
 
 
